@@ -65,10 +65,14 @@ def death_check():
 
 
 	if player.len > 1:
-		for bod_num in range(player.len - 1):
-			#print(prev_pos[bod_num+1], end = '')
-			if p_head[0] == prev_pos[bod_num+1][0] and p_head[1] == prev_pos[bod_num + 1][1]:
+		bod_num = 1
+		h_pos = prev_pos[0]
+		for i in range(player.len):
+			bod_pos = prev_pos[bod_num]
+			if h_pos == bod_pos:
 				restart_game()
+				break
+			bod_num += 1
 
 
 
